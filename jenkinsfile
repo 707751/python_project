@@ -9,12 +9,13 @@ pipeline {
         stage('Setup') {
             steps {
                 sh 'python3 -m venv venv'
-                sh 'source ./venv/bin/activate && pip install -r requirements.txt'
+                sh 'chmod +x venv/bin/activate'
+                sh './venv/bin/python -m pip install -r requirements.txt'
             }
         }
         stage('Test') {
             steps {
-                sh 'source ./venv/bin/activate && pytest'
+                sh './venv/bin/python -m pytest'
             }
         }
     }
