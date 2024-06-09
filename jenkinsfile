@@ -9,15 +9,13 @@ pipeline {
         stage('Setup') {
             steps {
                 sh 'python3 -m venv venv'
-                sh 'chmod +x venv/bin/activate'
                 sh './venv/bin/activate'
             }
         }
         stage('Test') {
             steps {
-                sh './venv/bin/activate' && pytest'
+                sh './venv/bin/activate && pytest'
             }
         }
     }
 }
-
