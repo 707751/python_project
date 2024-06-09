@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'source venv/bin/activate && pytest'
+                sh './venv/bin/activate' && pytest'
             }
         }
     }
