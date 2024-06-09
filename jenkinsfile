@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'git@github.com:707751/python_project.git'
+                git branch: 'main', url: 'https://github.com/707751/python_project.git'
             }
         }
         stage('Setup') {
